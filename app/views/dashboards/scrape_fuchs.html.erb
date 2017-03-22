@@ -1,0 +1,28 @@
+<h1>MyDealz Media Markt Scrape</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Link</th>
+    <th>Redakteur</th>
+    <th>Temperatur</th>
+    <th>Kommentare</th>
+    <th>Ersteller</th>
+    <th>Datum</th>
+    <th>Lokal</th>
+  </tr>
+  <% @entriesArray.each do |entry| %>
+  <tr style="text-align: right">
+    <td style="width: 1000px; text-align:left" ><%= entry.title %></td>
+    <td><a href="<%= entry.link %>" target="_blank">zum Deal</a></td>
+    <td><%= entry.redakteur %></td>
+    <td><%= entry.temperatur %></td>
+    <td style="width: 100px"><%= entry.comment %></td>
+    <td><%= entry.person %></td>
+    <td><%= entry.datum %></td>
+    <td><%= entry.lokal %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
