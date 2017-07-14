@@ -94,6 +94,8 @@ class DashboardsController < ApplicationController
         datum = Time.at(datum_1)
         temperatur = entry.css('div.vwo-vote').text.delete "°ABGELAUFEN"
         temperatur.to_i
+        if temperatur > 800
+          temperatur
         if redakteur = entry.css('span.text--backgroundPill').text.empty?
           redakteur =  'MD-User' # entry.css('span.text--backgroundPill').text
         else
